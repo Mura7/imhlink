@@ -3,7 +3,7 @@ body{
 }
 
 
-.background {
+.background-img {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     position: fixed; 
