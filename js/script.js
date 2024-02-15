@@ -1,30 +1,52 @@
-const muratBilgi = '{"firstName":"Murat", "lastName":"Altay", "link1":" | Twitter, Instagram | Linktree", "link2":"murataltay.com", "link3":"Murat Hoca Hakkında Bilmediğiniz 5 Şey", "profile":"MA"}'
-const murat = JSON.parse(muratBilgi);
+const data = {
+  kadir: {
+    firstName: "Kadir",
+    lastName: "Tüzün",
+    link: ['"Twitter, Instagram | Linktree"', "murataltay.com"],
+    profile: "MA",
+    instagram: "https://www.instagram.com/murat/",
+  },
+  yusa: {
+    firstName: "Yüşa Yusuf",
+    lastName: "Aslan",
+    link: [
+      '"Twitter, Instagram | Linktree"',
+      "sadecedoit.com",
+      "Benim Hakkımda Bilmediğiniz 5 Şey",
+    ],
+    profile: "YYA",
+    instagram: "https://www.instagram.com/yusayaslan/",
+  },
+  melik: {
+    firstName: "Melik ",
+    lastName: "Günay",
+    profile: "MG",
+  },
+};
 
-const yusaBilgi = '{"firstName":"Yüşa Yusuf", "lastName":"Aslan", "link1":" | Twitter, Instagram | Linktree", "link2":"sadecedoit.com", "link3":"Benim Hakkımda Bilmediğiniz 5 Şey", "profile":"YYA"}'
-const yusa = JSON.parse(yusaBilgi);
-
-
-function mura7(){
-    //Sayfa elementlerinin JSON formatı ile değişmesi
-    document.getElementById("profile").innerHTML = murat.profile;
-    document.getElementById("name").innerHTML = murat.firstName + " " + murat.lastName;
-    document.getElementById("social").innerHTML = murat.firstName + " " + murat.lastName + " " + murat.link1;
-    document.getElementById("website").innerHTML = murat.link2;
-    document.getElementById("about").innerHTML = murat.link3;
-    //Instagram butonu link değişimi
-    const link = document.getElementById("instaLink");
-    link.href = "https://www.instagram.com/murat/";
+function selectAccount(name = "yusa") {
+  if (data?.[name]) {
+    renderLink(data?.[name]);
+  }
+  //   !!data?.[name] && renderLink(data?.[name]);
 }
 
-function yya(){
-    //Sayfa elementlerinin JSON formatı ile değişmesi
-    document.getElementById("profile").innerHTML = yusa.profile;
-    document.getElementById("name").innerHTML = yusa.firstName + " " + yusa.lastName;
-    document.getElementById("social").innerHTML = yusa.firstName + " " + yusa.lastName + " " + yusa.link1;
-    document.getElementById("website").innerHTML = yusa.link2;
-    document.getElementById("about").innerHTML = yusa.link3;
-    //Instagram butonu link değişimi
-    const link = document.getElementById("instaLink");
-    link.href = "https://www.instagram.com/yusayaslan/";
+function renderLink(data) {
+  //Sayfa elementlerinin JSON formatı ile değişmesi
+  document.getElementById("profile").innerHTML = data?.profile;
+  document.getElementById("name").innerHTML =
+    data?.firstName + " " + data?.lastName;
+  //Instagram butonu link değişimi
+  document.getElementById("instaLink").href = data?.instagram;
+  renderButtonLinks(data?.link);
 }
+
+function renderButtonLinks(links) {
+  let linkHtml = "";
+  links?.forEach((item) => {
+    linkHtml += `<button id="social" class="buttonshadow mb-2 p-3 px-5 btn btn-light border border-3 border-dark" style="width: 100%; max-width: 700px; font-size: 16px; font-weight: 700; border-radius: 50px;"><a href="#" class="text-dark" style="text-decoration: none;">${item}</a></button>`;
+  });
+  document.getElementById("linkButtons").innerHTML = linkHtml;
+}
+
+selectAccount();

@@ -1,9 +1,25 @@
 {
-    "employees":[
-      {"firstName":"Murat", "lastName":"Altay", "link1":"|Twitter, Instagram |Linktree", 
-      "link2":"murataltay.com", "link3":"Murat Hoca Hakkında Bilmediğiniz 5 Şey", "profile":"MA"},
-      
-      {"firstName":"Yüşa Yusuf", "lastName":"Aslan", "link1":"|Twitter, Instagram |Linktree", 
-      "link2":"sadecedoit.com", "link3":"Benim Hakkımda Bilmediğiniz 5 Şey", "profile":"YYA"}
-    ]
+  "kadir": {
+    "firstName": "Kadir",
+    "lastName": "Tüzün",
+    "link": ["\"Twitter, Instagram | Linktree\"", "murataltay.com"],
+    "profile": "MA",
+    "instagram": "https://www.instagram.com/murat/"
+  },
+  "yusa": {
+    "firstName": "Yüşa Yusuf",
+    "lastName": "Aslan",
+    "link": [
+      "\"Twitter, Instagram | Linktree\"",
+      "sadecedoit.com",
+      "Benim Hakkımda Bilmediğiniz 5 Şey"
+    ],
+    "profile": "YYA",
+    "instagram": "https://www.instagram.com/yusayaslan/"
+  },
+  "melik": {
+    "firstName": "Melik ",
+    "lastName": "Günay",
+    "profile": "MG"
+  }
 }
