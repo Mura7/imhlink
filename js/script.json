@@ -1,0 +1,9 @@
+{
+    "employees":[
+      {"firstName":"Murat", "lastName":"Altay", "link1":"|Twitter, Instagram |Linktree", 
+      "link2":"murataltay.com", "link3":"Murat Hoca Hakkında Bilmediğiniz 5 Şey", "profile":"MA"},
+      
+      {"firstName":"Yüşa Yusuf", "lastName":"Aslan", "link1":"|Twitter, Instagram |Linktree", 
+      "link2":"sadecedoit.com", "link3":"Benim Hakkımda Bilmediğiniz 5 Şey", "profile":"YYA"}
+    ]
+}
